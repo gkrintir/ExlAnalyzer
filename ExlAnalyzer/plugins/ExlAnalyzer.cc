@@ -197,8 +197,8 @@ ExlAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      if(subdetEm==kEB){ // Check EB exclusivity 
        if(IsOverlappingWithElectron(iEvent, subdetEm, eta, phi)) continue; //Prob a good candidate
        if(IsOverlappingWithPhoton(iEvent, subdetEm, eta, phi)) continue; //Prob a good candidate 
-       if(energyEm > noiseThreshold.at(subdetHad)){
-	 std::cout<< " rejected due to "<<caloName.at(subdetHad)<<std::endl;
+       if(energyEm > noiseThreshold.at(subdetEm)){
+	 std::cout<< " rejected due to "<<caloName.at(subdetEm)<<std::endl;
        }
      }
      if(subdetEm==kEE){ // Check EE exclusivity
@@ -207,8 +207,8 @@ ExlAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        if(IsOverlappingWithElectron(iEvent, subdetEm, eta, phi)) continue; //Prob a good candidate                                                                                                     
        if(IsOverlappingWithPhoton(iEvent, subdetEm, eta, phi)) continue; //Prob a good candidate   
 
-       if(energyEm > noiseThreshold.at(subdetHad)){
-	 std::cout<< " rejected due to "<<caloName.at(subdetHad)<<std::endl;
+       if(energyEm > noiseThreshold.at(subdetEm)){
+	 std::cout<< " rejected due to "<<caloName.at(subdetEm)<<std::endl;
        }
      }
    }// calo tower loop
